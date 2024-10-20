@@ -35,7 +35,7 @@
                         <li class="tm-list"><a href="">Anasayfa</a></li>
                         <li class="tm-list"><a href="explore.html">Keşfetmek</a></li>
                         <li class="tm-list"><a href="rooms.html">Odalarımız</a></li>
-                        <li class="tm-list"><a href="rezervasyon_oluştur">Rezervasyon</a></li>
+                        <li class="tm-list"><a href="room">Rezervasyon</a></li>
                         <li class="tm-list"><a href="contact.html">İletişim</a></li>
                         <li class="tm-list dropdown">
                             <a href="login.html">Çıkış Yap</a>
@@ -177,23 +177,8 @@
         </div>
     </section>
 
-    <section class="tm-makeres">
-        <div class="tm-res">
-            <form method="POST" action="{% url 'home' %}">
-                {% csrf_token %}
-                <body>
-                    <div class="tm-resbutton">
-                        <button type="submit" class="reservation-btn">
-                            <p>Rezervasyon Yap</p>
-                        </button>
-                    </div>
-                </body>
-                
-            </form>
-        </div>
-    </section>
-
-    <footer class="tm-footer">
+    
+    <footer class="tm-footer" style="color: red;">
         <p>© 2024 GOLD Otel. Her hakkı saklıdır</p>
     </footer>
     

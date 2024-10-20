@@ -21,7 +21,24 @@ def user_login(request):
     else:
         return render(request,"login.html")
     
-        
+def room(request):
+    return render(request,"reservation_list.html")
+       
+
+def room1(request):
+    return render(request,"Luxury_Suite.html")
+def room2(request):
+    return render(request,"Delux_Suite.htmll")
+def room3(request):
+    return render(request,"Premier_Suite.htmll")
+def room4(request):
+    return render(request,"Luxury_Room.html")
+def room5(request):
+    return render(request,"Delux_Room.html")
+def room6(request):
+    return render(request,"Premier_Room.html")
+
+
 def user_register(request):
     if request.method=="POST":
         username=request.POST["username"]
@@ -31,7 +48,7 @@ def user_register(request):
 
         if password == repassword:
             if User.objects.filter(username=username).exists():
-                return render(request,"login.html",{"error":"usermaöe kullanılıyor.."})
+                return render(request,"login.html",{"error":"username kullanılıyor.."})
             else:
                 if User.objects.filter(email=email).exists():
                     return render(request,"login.html",{"error":"bu email adresinden önceden kayıt yapılmıştır.."})
@@ -44,17 +61,20 @@ def user_register(request):
     else:
         return render(request,"login.html")
 def create_reservation(request):
-    if request.method=='POST':
-        form=ReservationForm(request.POST)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
         if form.is_valid():
-            reservation=form.save(commit=False)
-            reservation.user=request.user
-            reservation.save()
+            reservation = form.save(commit=False)
+            reservation.user = request.user  # Kullanıcıyı ilişkilendir
+            reservation.save()  # Veritabanına kaydet
             messages.success(request, 'Rezervasyon başarıyla oluşturuldu.')
-            return redirect('reservation_list.html')
+            return redirect('home')  # Başka bir sayfaya yönlendirme
+        else:
+            messages.error(request, 'Formda hata var, lütfen kontrol edin.')
     else:
-        form=ReservationForm()
-    return render(request,'reservation_list.html')
+        form = ReservationForm()
+
+    return render(request, 'index.html', {'form': form})  # Formu render et
             
 def reservation_list(request):
     reservations=Reservation.objects.filter(user=request.user)

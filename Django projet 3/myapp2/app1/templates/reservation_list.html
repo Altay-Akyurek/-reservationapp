@@ -21,7 +21,9 @@
     
 <body>
     <header class="tm-header">
-        <img class="tm-logo" src="{% static 'img/hotel.png' %}"  style="width: 50px; height: 50px;">
+        <header class="tm-header">
+            <img class="tm-logo" src="{% static 'img/hotel.png' %}" style="width: 50px; height: 50px; position: absolute; left: 5;">
+                </header>
         <nav class="tm-nav">
                 <label for="menu-toggle" class="menu-icon">&#9776;</label>
                 <ul>
@@ -45,19 +47,25 @@
     </header>
     
     
-    <section class="tm-main">
-           <p>Rooms</p>
+    <section class="tm-main" >
+        <p >Rooms</p>
     </section>
     
     
       <section class="tm-roomsection">
+                    
                     <div class="tm-room1">
-                        <div class="tm-trans"> <div><p>2 Bed</p><p>Complimentary liquor</p><p>Free Wifi</p> </div>
-                        
+                        <div class="tm-trans"> 
+                            <div href="rezervasyon_oluştur">
+                                <p>2 Bed</p><p>Complimentary liquor</p><p>Free Wifi</p> 
+                            </div>
                         <div><p>Only for</p><p class="bold">$ 1999.99</p> </div></div>
                         
                         
-                        <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 000900.jpg' %}">
+                        <a href="room1">
+                            <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 000900.jpg' %}" style="width: 580px; height: 400px;">
+                        </a>
+                        
                      <p class="s">Luxury Suite</p>
 
                     </div>
@@ -66,8 +74,9 @@
                         
                         <div><p>Only for</p><p class="bold">$ 1599.99</p> </div></div>
                     
-                            
-                        <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001507.jpg' %}">
+                        <a href="room2">    
+                            <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001507.jpg' %}"  style="width: 580px; height: 400px;">
+                        </a>
                             <p>Delux Suite</p>
 
                     </div>
@@ -77,9 +86,10 @@
                         
                         <div><p>Only for</p><p class="bold">$ 1299.99</p> </div></div>
                         
-                            
-                        <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001617.jpg' %}">
-                             <p>Premier Suite</p>
+                        <a href="room3">    
+                            <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001617.jpg' %}"  style="width: 580px; height: 400px;">
+                        </a>
+                            <p>Premier Suite</p>
 
                     </div>
     </section>
@@ -91,9 +101,10 @@
                         
                         <div><p>Only for</p><p class="bold">$ 999.99</p> </div></div>
                         
-                        
-                        <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 000900.jpg' %}">
-                     <p class="s">Luxury Room</p>
+                        <a href="room4">
+                            <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 000900.jpg' %}"  style="width: 580px; height: 400px;">
+                        </a>
+                            <p class="s">Luxury Room</p>
 
                     </div>
                         <div class="tm-room1">
@@ -102,8 +113,9 @@
                         
                         <div><p>Only for</p><p class="bold">$ 599.99</p> </div></div>
                         
-                            
-                        <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001507.jpg' %}">
+                        <a href="room5">    
+                            <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001507.jpg' %}"  style="width: 580px; height: 400px;">
+                    </a>
                             <p>Delux Room</p>
 
                     </div>
@@ -113,8 +125,9 @@
                         
                         <div><p>Only for</p><p class="bold">$ 399.99</p> </div></div>
                         
-                            
-                        <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001617.jpg' %}">
+                        <a href="room6">    
+                            <img class="tm-roomimage" src="{% static 'img/Ekran görüntüsü 2024-10-18 001617.jpg' %}"  style="width: 580px; height: 400px;">
+                        </a>    
                              <p>Premier Room</p>
 
                     </div>
@@ -123,22 +136,7 @@
     
     
     
-       <section class="tm-makeres">
-        <div class="tm-res">
-            <form method="POST" action="{% url 'home' %}">
-                {% csrf_token %}
-                <body>
-                    <div class="tm-resbutton">
-                        <button type="submit" class="reservation-btn">
-                            <p>Rezervasyon Yap</p>
-                        </button>
-                    </div>
-                </body>
-                
-            </form>
-        </div>
-    </section>
-    
+       
     
     
     <footer class="tm-footer">
