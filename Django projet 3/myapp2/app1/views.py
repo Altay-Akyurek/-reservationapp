@@ -37,7 +37,8 @@ def room5(request):
     return render(request,"Delux_Room.html")
 def room6(request):
     return render(request,"Premier_Room.html")
-
+def sell(request):
+    return render(request,"sell.html")
 
 def user_register(request):
     if request.method=="POST":

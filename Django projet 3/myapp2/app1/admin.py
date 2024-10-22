@@ -12,5 +12,5 @@ admin.site.register(Reservation, ReservationAdmin)
 
 admin.site.register(Register)
 # Register your models here.
-# Register your models here.
+
 

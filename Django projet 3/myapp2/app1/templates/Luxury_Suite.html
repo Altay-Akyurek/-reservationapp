@@ -77,34 +77,28 @@
                     <form method="POST" action="{% url 'create_reservation' %}">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label  for="id_check_in">Giriş Tarihi:</label>
-                            <input style="padding: 1px; margin: 0px; color: rgb(34, 47, 110);" type="date" id="id_check_in" name="check_in" required>
+                            <label for="id_check_in">Giriş Tarihi:</label>
+                            <input type="date" id="id_check_in" name="check_in" required>
                         </div>
-            
+                
                         <div class="form-group">
                             <label for="id_check_out">Çıkış Tarihi:</label>
-                            <input style="padding: 1px; margin: 0px; color: rgb(34, 47, 110);" type="date" id="id_check_out" name="check_out" required>
+                            <input type="date" id="id_check_out" name="check_out" required>
                         </div>
-            
+                
                         <div class="form-group">
                             <label for="id_room_number">Oda Numarası:</label>
-                            <input style="padding: 1px; margin: 0px; color: rgb(34, 47, 110);" type="number" id="id_room_number" name="room_number" min="1" required>
+                            <input type="number" id="id_room_number" name="room_number" min="1" required>
                         </div>
-            
-                        <section class="tm-makeres">
-                            <div class="tm-res" style="text-align: center;">
-                                <form method="POST" action="{% url 'home' %}">
-                                    {% csrf_token %}
-                                    <div class="tm-resbutton" style="display: inline-block;">
-                                        <button  type="submit" class="reservation-btn">
-                                            <p>Rezervasyon Yap</p>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </section>
+                
+                        <div class="tm-resbutton" style="text-align: center;">
+                            <button type="submit" class="reservation-btn">
+                                <p>Rezervasyon Yap</p>
+                            </button>
+                        </div>
                     </form>
                 </div>
+                
 
             
             
